@@ -1,0 +1,42 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- Se deben establecer aquí las entradas del diccionario de recursos. -->
+		<ControlTemplate x:Key="Search" TargetType="UserControl">
+            <Grid>
+		        <Path Stretch="Fill" Stroke="#FF000000" Data="F1 M1.4355397,1.4417288 L58.564455,1.4417288 58.564459,66.558271 1.4355397,66.558271 1.4355397,1.4417288 z" StrokeThickness="3" Fill="#659DB800" StrokeLineJoin="Round"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="FlechaArriba" TargetType="UserControl">
+            <Grid>
+		        <Path Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Data="F1 M 224,192L 288,128L 352,192L 320,192L 320,288L 256,288L 256,192L 224,192 Z ">
+		            <Path.Fill>
+		                <LinearGradientBrush StartPoint="0.5,0.909375" EndPoint="0.5,0.090625">
+		                    <GradientStop Color="#FFB80000" Offset="0"/>
+		                    <GradientStop Color="#FFFF9595" Offset="1"/>
+		                </LinearGradientBrush>
+		            </Path.Fill>
+		        </Path>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="FlechaAbajo" TargetType="UserControl">
+            <Grid>
+		        <Path Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Data="F1 M 224,192L 288,128L 352,192L 320,192L 320,288L 256,288L 256,192L 224,192 Z " RenderTransformOrigin="0.5,0.5">
+		        	<Path.RenderTransform>
+		        		<TransformGroup>
+		        			<ScaleTransform/>
+		        			<SkewTransform/>
+		        			<RotateTransform Angle="180"/>
+		        			<TranslateTransform/>
+		        		</TransformGroup>
+		        	</Path.RenderTransform>
+		            <Path.Fill>
+		                <LinearGradientBrush StartPoint="0.5,0.909375" EndPoint="0.5,0.090625">
+		                    <GradientStop Color="#FF00B814" Offset="0"/>
+		                    <GradientStop Color="#FF95FF97" Offset="1"/>
+		                </LinearGradientBrush>
+		            </Path.Fill>
+		        </Path>
+            </Grid>
+        </ControlTemplate>	
+</ResourceDictionary>

@@ -1,0 +1,103 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BibliotecaMaf.Controles.BusquedaSelect" x:Class= "BibliotecaMaf.Controles.BusquedaSelect.Search" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300" Loaded="UserControl_Loaded_1" MinWidth="65" MinHeight="65">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Properties/ResourceDictionary1.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<ControlTemplate x:Key="FlechaAbajo" TargetType="{x:Type UserControl}">
+				<Grid>
+					<Path Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Data="F1 M 224,192L 288,128L 352,192L 320,192L 320,288L 256,288L 256,192L 224,192 Z " RenderTransformOrigin="0.5,0.5">
+						<Path.RenderTransform>
+							<TransformGroup>
+								<ScaleTransform/>
+								<SkewTransform/>
+								<RotateTransform Angle="180"/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</Path.RenderTransform>
+						<Path.Fill>
+							<LinearGradientBrush StartPoint="0.5,0.909375" EndPoint="0.5,0.090625">
+								<GradientStop Color="#FF00B4B8" Offset="0"/>
+								<GradientStop Color="#FF95F8FF" Offset="1"/>
+							</LinearGradientBrush>
+						</Path.Fill>
+					</Path>
+				</Grid>
+			</ControlTemplate>	
+		</ResourceDictionary>	
+	</UserControl.Resources>
+    <Grid x:Name="Grilla"  Margin="0" d:LayoutOverrides="Height" SizeChanged="Grilla_SizeChanged">
+    	<local:Movimiento x:Name="FlechaArribaIzq"  Template="{DynamicResource FlechaAbajo}" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="14" CambioPosicion="FlechaArribaIzq_CambioPosicion" ReferenciaAlineacion="Central">
+    		<local:Movimiento.Resources>
+    			<ResourceDictionary>
+    				<ResourceDictionary.MergedDictionaries>
+    					<ResourceDictionary Source="Properties/ResourceDictionary1.xaml"/>
+    				</ResourceDictionary.MergedDictionaries>
+    			</ResourceDictionary>
+    		</local:Movimiento.Resources>
+    	</local:Movimiento>
+    	<local:Movimiento x:Name="FlechaArribaDer"  Template="{DynamicResource FlechaAbajo}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="14" Height="20" CambioPosicion="FlechaArribaDer_CambioPosicion" ReferenciaAlineacion="Central" Margin="286,0,0,0">
+    		<local:Movimiento.Resources>
+    			<ResourceDictionary>
+    				<ResourceDictionary.MergedDictionaries>
+    					<ResourceDictionary Source="Properties/ResourceDictionary1.xaml"/>
+    				</ResourceDictionary.MergedDictionaries>
+    			</ResourceDictionary>
+    		</local:Movimiento.Resources>
+    	</local:Movimiento>
+    	<local:Movimiento x:Name="FlechaAbajoIzq"  Template="{DynamicResource FlechaArriba}"   HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Width="14"  Height="20"  CambioPosicion="FlechaAbajoIzq_CambioPosicion" ReferenciaAlineacion="Central">
+    		<local:Movimiento.Resources>
+    			<ResourceDictionary>
+    				<ResourceDictionary.MergedDictionaries>
+    					<ResourceDictionary Source="Properties/ResourceDictionary1.xaml"/>
+    				</ResourceDictionary.MergedDictionaries>
+    			</ResourceDictionary>
+    		</local:Movimiento.Resources>
+    	</local:Movimiento>
+    	<local:Movimiento x:Name="FlechaAbajoDer"  Template="{DynamicResource FlechaArriba}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="20" Width="14" d:LayoutOverrides="VerticalAlignment" CambioPosicion="FlechaAbajoDer_CambioPosicion" ReferenciaAlineacion="Central" Margin="286,0,0,0">
+    		<local:Movimiento.Resources>
+    			<ResourceDictionary>
+    				<ResourceDictionary.MergedDictionaries>
+    					<ResourceDictionary Source="Properties/ResourceDictionary1.xaml"/>
+    				</ResourceDictionary.MergedDictionaries>
+    			</ResourceDictionary>
+    		</local:Movimiento.Resources>
+    	</local:Movimiento>
+    	<local:Movimiento x:Name="Buscador" HorizontalAlignment="Left" Width="60" Template="{DynamicResource Search}" Panel.ZIndex="1" Margin="120,16,0,16" CambioPosicion="Buscador_CambioPosicion">
+    		<local:Movimiento.Resources>
+    			<ResourceDictionary>
+    				<ResourceDictionary.MergedDictionaries>
+    					<ResourceDictionary Source="Properties/ResourceDictionary1.xaml"/>
+    				</ResourceDictionary.MergedDictionaries>
+    			</ResourceDictionary>
+    		</local:Movimiento.Resources>
+    	</local:Movimiento>
+    	<Grid x:Name="GrillaAudio" Margin="7,25"/>
+    	<Path Data="M-18.5,142L276.5,142" Height="5" Stretch="Fill" StrokeThickness="3" VerticalAlignment="Top" StrokeEndLineCap="Square" StrokeStartLineCap="Square" Margin="7,25,7,0">
+    		<Path.Stroke>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="Black" Offset="1"/>
+    				<GradientStop Color="White"/>
+    			</LinearGradientBrush>
+    		</Path.Stroke>
+    	</Path>
+    	<Path Data="M-18.5,142L276.5,142" Height="5" StrokeThickness="3" VerticalAlignment="Bottom" Stretch="Fill" StrokeStartLineCap="Square" StrokeEndLineCap="Square" Margin="7,0,7,25">
+    		<Path.Stroke>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="Black" Offset="0"/>
+    				<GradientStop Color="White" Offset="1"/>
+    			</LinearGradientBrush>
+    		</Path.Stroke>
+    	</Path>
+    
+	
+	
+	</Grid>
+</UserControl>
