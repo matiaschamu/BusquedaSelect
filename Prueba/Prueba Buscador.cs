@@ -129,9 +129,9 @@ namespace BibliotecaMaf.Controles.BusquedaSelect
 			for (i = 0 ; i < Search1.Valores.Length ; i++)
 			{
 				Search1.Valores[i].Valores = k;
-				Search1.Valores[i].Color = Search1.ColorPlot;
+                Search1.Valores[i].Color = System.Windows.Media.Brushes.Yellow;
 				k++;
-				if (k > 200)
+				if (k > 300)
 				{
 					k = 0;
 
@@ -193,5 +193,16 @@ namespace BibliotecaMaf.Controles.BusquedaSelect
 
 			textBoxActualizarEstado.Text = textBoxActualizarEstado.Text + "Color " + Search1.ColorPlot.ToString() + "\r\n";
 		}
-	}
+
+        private void trackBarUmbral_Scroll(object sender, EventArgs e)
+        {
+            Search1.NivelUmbral = trackBarUmbral.Value;
+            labelUmbral.Text = Search1.NivelUmbral.ToString();
+        }
+
+        private void checkBoxUmbral_CheckedChanged(object sender, EventArgs e)
+        {
+            Search1.MostrarNivelUmbral = checkBoxUmbral.Checked;
+        }
+    }
 }
