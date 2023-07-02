@@ -337,6 +337,22 @@ namespace BibliotecaMaf.Controles.BusquedaSelect
             }
         }
 
+        public void SetValores(int[] Valores, int StartIndex, System.Windows.Media.SolidColorBrush[] Color)
+        {
+            if (Valores != null)
+            {
+                for (int i = 0; i < Valores.Length; i++)
+                {
+                    if (mValores.Length > StartIndex + i)
+                    {
+                        mValores[i].Valores = Valores[i];
+                        mValores[i].Color = Color[i];
+                    }
+                }
+                Escribir();
+            }
+        }
+
         public int ResolucionHorizontal
         {
             get { return (int)GrillaAudio.ActualWidth; }
